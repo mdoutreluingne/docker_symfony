@@ -14,8 +14,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- \
     &&  mv composer.phar /usr/local/bin/composer
 
 # Symfony CLI
-# RUN curl -sS https://get.symfony.com/cli/installer | bash \
-#     &&  mv /root/.symfony/bin/symfony /usr/local/bin
 RUN echo 'deb [trusted=yes] https://repo.symfony.com/apt/ /' | tee /etc/apt/sources.list.d/symfony-cli.list
 RUN apt update
 RUN apt install symfony-cli
