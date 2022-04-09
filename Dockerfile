@@ -10,9 +10,15 @@ RUN apt-get update \
 RUN docker-php-ext-configure \
     intl \
     &&  docker-php-ext-install \
-    pdo pdo_mysql pdo_pgsql opcache intl zip calendar dom mbstring gd xsl
+    pdo pdo_mysql pdo_pgsql intl zip calendar dom mbstring gd xsl
 
 RUN pecl install apcu && docker-php-ext-enable apcu
+
+# Install extention amqp
+RUN apt-get update && apt-get install -y librabbitmq-dev libssh-dev \
+    && docker-php-ext-install opcache bcmath sockets \
+    && pecl install amqp \
+    && docker-php-ext-enable amqp
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- \
