@@ -1,5 +1,19 @@
-Env Dev Symfony with Docker
-========
+# Env Dev Symfony with Docker
+
+**ONLY for DEV, not for production**
+
+## Ready to use with
+
+This docker-compose provides you :
+
+- PHP-8.1-cli (Debian)
+    - Composer
+    - Symfony CLI
+    - and some other php extentions
+    - nodejs, npm, yarn
+- mysql
+- phpmyadmin
+- mailcatcher
 
 ## Clone the repository
 
